@@ -1,4 +1,4 @@
-﻿from tkinter import *
+from tkinter import *
 from tkinter.ttk import Combobox
 import time
 import sys
@@ -204,8 +204,8 @@ class UnixDiscordIpcClient(DiscordIpcClient):
 
 
 # Дэфолтные настройки
-config = {
-    "background": "#FFFFFF",
+theme = {
+    "background_color": "#FFFFFF",
     "background_text": "#FFFFFF",
     "foreground_text": "#000000",
     "background_button": "#FFFFFF",
@@ -215,7 +215,7 @@ config = {
 
 
 default_config = {
-    "background": "#FFFFFF",
+    "background_color": "#FFFFFF",
     "background_text": "#FFFFFF",
     "foreground_text": "#000000",
     "background_button": "#FFFFFF",
@@ -226,7 +226,7 @@ default_config = {
 
 # Словарь с данными для дискорд рпц
 activity = {
-    "state": "Версия v1.0-beta (dev)",
+    "state": "Версия v1.0-release",
     "details": "В главном меню",
     "assets": {
         "large_text": "MathHelper",
@@ -274,7 +274,7 @@ def Perimetr():
             float(dlina.get())
         except ValueError:
             error_window = Tk()
-            error_window["bg"] = data["background"]
+            error_window["bg"] = data["background_color"]
             error_window.title("Ошибка!")
             error_window.geometry('400x250')
             error = Label(error_window, text="Введите корректные данные!",
@@ -284,7 +284,7 @@ def Perimetr():
         else:
             if shirina.get() > dlina.get():  # If contradiction
                 error_window = Tk()
-                error_window["bg"] = data["background"]
+                error_window["bg"] = data["background_color"]
                 error_window.title("Ошибка!")
                 error_window.geometry('400x250')
                 error = Label(error_window, text="Ошибка: ширина не может быть больше длины. Повторите попытку!", bg=data["background_text"], fg=data["foreground_text"])
@@ -292,7 +292,7 @@ def Perimetr():
                 error_window.mainloop()
             elif shirina.get().isdigit() is False or dlina.get().isdigit() is False:
                 error_window = Tk()
-                error_window["bg"] = data["background"]
+                error_window["bg"] = data["background_color"]
                 error_window.title("Ошибка!")
                 error_window.geometry('400x250')
                 error = Label(error_window, text="Введите корректные данные!",
@@ -301,7 +301,7 @@ def Perimetr():
                 error_window.mainloop()
             elif shirina.get() < dlina.get() or shirina.get() == dlina.get():  # Getting perimeter
                 result_window = Tk()
-                result_window["bg"] = data["background"]
+                result_window["bg"] = data["background_color"]
                 result_window.title("Результат")
                 result_window.geometry('250x150')
                 rezyltat_perimetr = float(dlina.get()) + float(shirina.get()) + float(dlina.get()) + float(shirina.get())
@@ -315,7 +315,7 @@ def Perimetr():
         perimeter_window.destroy()
 
     perimeter_window = Tk()
-    perimeter_window["bg"] = data["background"]
+    perimeter_window["bg"] = data["background_color"]
     perimeter_window.resizable(width=False, height=False)
     perimeter_window.title("MathHelper - Периметр")
     perimeter_window.geometry('832x300')
@@ -347,7 +347,7 @@ def Ploshad():
             float(dlina.get())
         except ValueError:
             error_window = Tk()
-            error_window["bg"] = data["background"]
+            error_window["bg"] = data["background_color"]
             error_window.title("Ошибка!")
             error_window.geometry('400x250')
             error = Label(error_window, text="Введите корректные данные!",
@@ -356,7 +356,7 @@ def Ploshad():
             error_window.mainloop()
         else:
             result_window_area = Tk()
-            result_window_area["bg"] = data["background"]
+            result_window_area["bg"] = data["background_color"]
             rezyltat_ploshad = int(dlina.get()) * int(shirina.get())
             result_window_area.title("Результат")
             result_window_area.geometry('250x150')
@@ -369,7 +369,7 @@ def Ploshad():
         activity["details"] = "В главном меню"
         area_window.destroy()
     area_window = Tk()
-    area_window["bg"] = data["background"]
+    area_window["bg"] = data["background_color"]
     area_window.resizable(width=False, height=False)
     area_window.title("MathHelper - Площадь")
     area_window.geometry('832x300')
@@ -402,7 +402,7 @@ def Obyem():
             float(length.get())
         except ValueError:
             error_window = Tk()
-            error_window["bg"] = data["background"]
+            error_window["bg"] = data["background_color"]
             error_window.title("Ошибка!")
             error_window.geometry('400x250')
             error = Label(error_window, text="Введите корректные данные!",
@@ -412,7 +412,7 @@ def Obyem():
         else:
             if float(shirina.get()) < 0 or float(dlina.get()) < 0 or float(length.get()) < 0:
                 error_window = Tk()
-                error_window["bg"] = data["background"]
+                error_window["bg"] = data["background_color"]
                 error_window.title("Ошибка!")
                 error_window.geometry('400x250')
                 error = Label(error_window, text="Ошибка: значения не моут меньше нуля. Повторите попытку!", bg=data["background_text"], fg=data["foreground_text"])
@@ -420,7 +420,7 @@ def Obyem():
                 error_window.mainloop()
             else:
                 result_window = Tk()
-                result_window["bg"] = data["background"]
+                result_window["bg"] = data["background_color"]
                 result_window.title("Результат")
                 result_window.geometry('250x150')
                 result = float(dlina.get()) * float(shirina.get()) * float(length.get())
@@ -433,7 +433,7 @@ def Obyem():
         activity["details"] = "В главном меню"
         void_window.destroy()
     void_window = Tk()
-    void_window["bg"] = data["background"]
+    void_window["bg"] = data["background_color"]
     void_window.resizable(width=False, height=False)
     void_window.title("MathHelper - Площадь")
     void_window.geometry('832x300')
@@ -466,7 +466,7 @@ def Konverter_velichin():
             float(data_value.get())
         except ValueError:
             error_window = Tk()
-            error_window["bg"] = data["background"]
+            error_window["bg"] = data["background_color"]
             error_window.title("Ошибка!")
             error_window.geometry('400x250')
             error = Label(error_window, text="Введите корректные данные!",
@@ -560,7 +560,7 @@ def Konverter_velichin():
                 is_complete = False
             if is_complete is True:
                 result_window = Tk()
-                result_window["bg"] = data["background"]
+                result_window["bg"] = data["background_color"]
                 result_window.title("Результат")
                 result_window.geometry('250x150')
                 result = float(answer)
@@ -570,7 +570,7 @@ def Konverter_velichin():
                 result_window.mainloop()
             else:
                 error_window = Tk()
-                error_window["bg"] = data["background"]
+                error_window["bg"] = data["background_color"]
                 error_window.title("Ошибка!")
                 error_window.geometry('400x250')
                 error_window.resizable(height=False, width=False)
@@ -636,7 +636,7 @@ def number_of_digits():
         activity["details"] = "В главном меню"
         window.destroy()
     window = Tk()
-    window["bg"] = data["background"]
+    window["bg"] = data["background_color"]
     window.resizable(width=False, height=False)
     window.title("MathHelper - Количество цифр в числе")
     window.geometry('530x180')
@@ -663,7 +663,7 @@ def get_dividers():
             int(number.get())
         except ValueError:
             error_window = Tk()
-            error_window["bg"] = data["background"]
+            error_window["bg"] = data["background_color"]
             error_window.title("Ошибка!")
             error_window.geometry('400x250')
             error = Label(error_window, text="Введите корректные данные!",
@@ -713,7 +713,7 @@ def simple_number():
             int(number.get())
         except ValueError:
             error_window = Tk()
-            error_window["bg"] = data["background"]
+            error_window["bg"] = data["background_color"]
             error_window.title("Ошибка!")
             error_window.geometry('400x250')
             error = Label(error_window, text="Введите корректные данные!",
@@ -742,7 +742,7 @@ def simple_number():
         activity["details"] = "В главном меню"
         window.destroy()
     window = Tk()
-    window["bg"] = data["background"]
+    window["bg"] = data["background_color"]
     window.resizable(width=False, height=False)
     window.title("MathHelper - Простое число")
     window.geometry('530x180')
@@ -823,6 +823,7 @@ def calculator():
     data = config_load()
     activity["details"] = "Использует калькулятор"
     root = Tk()
+    root["bg"] = data["background_color"]
     root.resizable(width=False, height=False)
     root.title("MathHelper - Калькулятор")
     main_text = "Для расчетов необходимо использовать следующие знаки:\n+ - сложение\n- - вычитание\n: - деление\n* - умножение\nВводите выражение с одним знаком действия БЕЗ пробелов. Пример: 2:2; 2+3"
@@ -845,6 +846,7 @@ def picks_theorem():
     def clicked():
         if external.get().isdigit() and internal.get().isdigit():
             result = Tk()
+            result["bg"] = data["background_color"]
             result.title("Результат")
             result.geometry('250x150')
             area = float(int(internal.get()) + int(external.get()) / 2 - 1)
@@ -854,6 +856,7 @@ def picks_theorem():
             result.mainloop()
         else:
             error = Tk()
+            error["bg"] = data["background_color"]
             error.title("Ошибка")
             error.geometry('272x150')
             txt = Label(error, text="Введите корректные данные!", bg=data["background_text"], fg=data["foreground_text"])
@@ -864,7 +867,7 @@ def picks_theorem():
         activity["details"] = "В главном меню"
         window.destroy()
     window = Tk()
-    window["bg"] = data["background"]
+    window["bg"] = data["background_color"]
     window.resizable(width=False, height=False)
     window.title("MathHelper - Теорема Пика")
     window.geometry('535x180')
@@ -895,7 +898,7 @@ def factorial():
             int(number.get())
         except ValueError:
             error_window = Tk()
-            error_window["bg"] = data["background"]
+            error_window["bg"] = data["background_color"]
             error_window.title("Ошибка!")
             error_window.geometry('400x250')
             error = Label(error_window, text="Введите корректные данные!",
@@ -905,6 +908,7 @@ def factorial():
         else:
             if int(number.get()) > 50000:
                 error_window = Tk()
+                error_window["bg"] = data["background_color"]
                 error_window.title("Ошибка")
                 error_window.geometry('530x180')
                 txt = Label(error_window, text="Введите число, меньшее 50000!", bg=data["background_text"], fg=data["foreground_text"])
@@ -912,6 +916,7 @@ def factorial():
                 error_window.mainloop()
             elif int(number.get()) <= 0:
                 error_window = Tk()
+                error_window["bg"] = data["background_color"]
                 error_window.title("Ошибка")
                 error_window.geometry('530x180')
                 txt = Label(error_window, text="Введите число, большее 0!", bg=data["background_text"], fg=data["foreground_text"])
@@ -932,7 +937,7 @@ def factorial():
         activity["details"] = "В главном меню"
         window.destroy()
     window = Tk()
-    window["bg"] = data["background"]
+    window["bg"] = data["background_color"]
     window.resizable(width=False, height=False)
     window.title("MathHelper - Факториал")
     window.geometry('530x180')
@@ -957,7 +962,7 @@ def about():
         activity["details"] = "В главном меню"
         root.destroy()
     root = Tk()
-    root["bg"] = data["background"]
+    root["bg"] = data["background_color"]
     root.resizable(width=False, height=False)
     main_text = "Версия: v1.0\nРазработчик: DiOnFire\nИсходный код: github.com/DiOnFire/MathHelper\nНашли баг? https://github.com/DiOnFire/MathHelper/issues\n  "
     root.title("MathHelper - Информация")
@@ -975,20 +980,30 @@ def settings():
     activity["details"] = "В меню настроек"
 
     def save():
-        if is_correct_hex(background.get()) == 1:
-            config["background"] = background.get()
         if is_correct_hex(background_text_entry.get()) == 1:
-            config["background_text"] = background_text_entry.get()
+            theme["background_text"] = background_text_entry.get()
+            with open("config.json", "w") as file:
+                json.dump(theme, file)
+        if is_correct_hex(background.get()) == 1:
+            theme["background_color"] = background.get()
+            with open("config.json", "w") as file:
+                json.dump(theme, file)
         if is_correct_hex(foreground_text.get()) == 1:
-            config["foreground_text"] = foreground_text.get()
+            theme["foreground_text"] = foreground_text.get()
+            with open("config.json", "w") as file:
+                json.dump(theme, file)
         if is_correct_hex(foreground_button.get()) == 1:
-            config["foreground_button"] = foreground_button.get()
+            theme["foreground_button"] = foreground_button.get()
+            with open("config.json", "w") as file:
+                json.dump(theme, file)
         if is_correct_hex(background_button.get()) == 1:
-            config["background_button"] = background_button.get()
+            theme["background_button"] = background_button.get()
+            with open("config.json", "w") as file:
+                json.dump(theme, file)
         if is_correct_hex(background_entry.get()) == 1:
-            config["background_entry"] = background_entry.get()
-        with open("config.json", "w") as file:
-            json.dump(config, file)
+            theme["background_entry"] = background_entry.get()
+            with open("config.json", "w") as file:
+                json.dump(theme, file)
         root.destroy()
 
     def return_defaults():
@@ -1000,7 +1015,7 @@ def settings():
         activity["details"] = "В главном меню"
         root.destroy()
     root = Tk()
-    root["bg"] = data["background"]
+    root["bg"] = data["background_color"]
     root.title("MathHelper - Настройки")
     root.geometry('279x410')
     root.resizable(width=False, height=False)
@@ -1043,7 +1058,7 @@ def menu():
     # Создаем окно
     data = config_load()
     root = Tk()
-    root["bg"] = data["background"]
+    root["bg"] = data["background_color"]
     root.resizable(width=False, height=False)
     root.title("MathHelper")
     root.geometry('518x640')
@@ -1095,4 +1110,5 @@ def menu():
 
 thread1 = threading.Thread(target=discord_rpc, daemon=True)
 thread1.start()
+theme = config_load()
 menu()
